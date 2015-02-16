@@ -7,7 +7,7 @@ var OAuthConfig = (function() {
   var clientId = '59d50f7e590b45e09b28574d86b56d06';
   var redirectUri = 'http://localhost:8000/callback.html';
 
-  if (location.href.indexOf('https://jmperezperez.com') === 0) {
+  if (location.href.indexOf('http://jmperezperez.com') === 0) {
     redirectUri = 'http://jmperezperez.com/spotify-web-api-start-template/callback.html';
   }
 
