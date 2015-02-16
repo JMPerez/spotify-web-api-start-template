@@ -8,7 +8,7 @@ var OAuthConfig = (function() {
   var redirectUri = 'http://localhost:8000/callback.html';
 
   if (location.href.indexOf('https://jmperezperez.com') === 0) {
-    redirectUri = 'https://jmperezperez.com/spotify-web-api-start-template/callback.html';
+    redirectUri = 'http://jmperezperez.com/spotify-web-api-start-template/callback.html';
   }
 
   var host = /http[s]?:\/\/[^/]+/.exec(redirectUri)[0];
