@@ -1,0 +1,27 @@
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+#login, #loggedin {
+  text-align: center;
+}
+
+#login-button {
+  margin: 30px;
+}
+
+#loggedin img {
+  margin: 0 auto;
+}
+
+.playlist {
+  width: 400px;
+  text-align: left;
+  margin: 10px auto;
+  display: inline-block;
+}
+
+.playlist img {
+  object-fit: cover;
+}

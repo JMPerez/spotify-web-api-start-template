@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Example of the Implicit Grant flow with Spotify</title>
+
+    <!-- bootstrap.min.css -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/styles.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><span>Spotify Web API Example</span></a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="#">Home</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="starter-template">
+        <h1>Spotify Web API + OAuth2 + Sp-bootstrap template</h1>
+        <p class="lead">Use this project as a way to quickly start a new project.</p>
+      </div>
+
+      <!-- ko ifnot: isLoggedIn -->
+      <div id="login">
+        <div data-bind="if: loginErrorMessage">
+          <div class="alert alert-danger" data-bind="text: loginErrorMessage"></div>
+        </div>
+        <button id="login-button" class="btn btn-primary" data-bind="click: login">Log in with Spotify</button>
+      </div>
+      <!-- /ko -->
+
+      <!-- ko if: isLoggedIn -->
+      <div id="loggedin">
+        <div data-bind="with: user">
+          <h1>Logged in as <span data-bind="text: display_name"></span></h1>
+          <img data-bind="attr: {src: images[0].url}">
+        </div>
+
+        <hr />
+
+        <h2>Some of my public playlists</h2>
+        <ul data-bind="foreach: playlists">
+          <li class="media playlist">
+            <div class="media-left">
+              <img data-bind="attr: {src: images.length ? images[0].url : ''}" width="200" height="200" />
+            </div>
+            <div class="media-body">
+              <div class="media-heading" data-bind="text:name"></div>
+            </div>
+          </li>
+        </ul>
+
+        <button id="login-button" class="btn btn-primary" data-bind="click: logout">Log out from Spotify</button>
+      </div>
+      <!-- /ko -->
+    </div>
+
+    <!-- jQuery required for Bootstrap core JavaScript -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <!-- This file would be available as a vendor dependency in your local project if you're using Bower or Composer -->
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/knockout/dist/knockout.js"></script>
+    <script src="bower_components/spotify-web-api-js/src/spotify-web-api.js"></script>
+    <script src="js/oauth-config.js"></script>
+    <script src="js/oauth-manager.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

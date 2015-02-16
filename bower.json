@@ -1,0 +1,15 @@
+{
+  "name": "spotify-web-api-start-template",
+  "version": "0.0.1",
+  "homepage": "https://github.com/jmperez/spotify-web-api-start-template",
+  "authors": [
+    "José M. Pérez <jperez@spotify.com>"
+  ],
+  "description": "A template for a webapp using the Spotify Web API",
+  "license": "MIT",
+  "dependencies": {
+    "knockout": "~3.2.0",
+    "bootstrap": "~3.3.2",
+    "spotify-web-api-js": "~0.10"
+  }
+}
